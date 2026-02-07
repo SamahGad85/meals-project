@@ -218,16 +218,25 @@ async function showMealDetails(mealId) {
     document.getElementById("mealDetailsContent").innerHTML = `
     <h2 >${meal.strMeal}</h2>
     
-    <div class='mb-5 relative'>
-    <img  src='${meal.strMealThumb}'/>
-    <div class='absolute'>${meal.strCategory}</div>
+    <div class='mb-2 relative'>
+    <img class='card'  src='${meal.strMealThumb}'/>
+    
     </div>
+    <div class='badges'><div class='badge'>${meal.strArea}</div><div class='badge'>${meal.strCategory}</div></div>
     <h3>Ingredients</h3>
     <ol class ='list-group-item mb-5 ml-5'>
     ${ingredients.map((ing) => `<li>${ing}</li>`).join("")}
     </ol>
+    <div>
     <h3>Instructions</h3>
     <p>${meal.strInstructions}</p>
+    
+     </div>
+   
+      <a href="${meal.strYoutube}" class="btn btn-primary">
+                    Watch on youtube
+                </a>
+
     `;
   } catch (error) {
     console.log(error);
